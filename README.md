@@ -1,1 +1,1 @@
-# design patterns GOF, using typescript
+# design patterns(GOF), with typescript
