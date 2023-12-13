@@ -17,7 +17,9 @@ function clinetCode(abstraction: RemoteControl | RemoteControlWithVolume): void 
 const tv = new Tv();
 const radio = new Radio();
 const radioRemoteControl = new RemoteControl(radio);
+const tvRemoteControl = new RemoteControl(tv);
 const radioRemoteVolume = new RemoteControlWithVolume(radio);
 
 clinetCode(radioRemoteControl);
 clinetCode(radioRemoteVolume);
+clinetCode(tvRemoteControl);
