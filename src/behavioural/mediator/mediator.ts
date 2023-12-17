@@ -5,7 +5,10 @@ export class Mediator {
   private sellers: Seller[] = [];
 
   addSeller(...sellers: Seller[]): void {
-    sellers.forEach((seller) => this.sellers.push(seller));
+    sellers.forEach((seller) => {
+      this.sellers.push(seller);
+      seller.setMediator(this);
+    });
   }
 
   buy(id: string): TSellerProduct | void {
