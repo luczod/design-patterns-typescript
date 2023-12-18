@@ -4,6 +4,7 @@ interface IObservable {
   notify(): void; // update
 }
 
+// CONCRETE OBSERVABLE -> WATCHED
 interface IObserver {
   update(...args: unknown[]): void;
 }
@@ -34,7 +35,7 @@ class InputObservable implements IObservable {
   }
 }
 
-// CONCRETE OBSERVER
+// CONCRETE OBSERVER -> WATCHMAN
 class ParagraphObserver implements IObserver {
   constructor(public element: HTMLParagraphElement) {}
 
@@ -45,7 +46,7 @@ class ParagraphObserver implements IObserver {
   }
 }
 
-// CONCRETE OBSERVER
+// CONCRETE OBSERVER -> WATCHMAN
 class DivObserver implements IObserver {
   constructor(public element: HTMLDivElement) {}
 
