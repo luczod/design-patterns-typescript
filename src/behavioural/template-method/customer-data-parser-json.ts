@@ -19,6 +19,6 @@ export class CustomerDataParserJson extends CustomerDataParser {
   }
 
   hook(): void {
-    console.log('The hook is run.');
+    console.log('The hook is run before.');
   }
 }

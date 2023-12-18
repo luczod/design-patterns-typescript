@@ -8,11 +8,12 @@ export abstract class CustomerDataParser {
   // final method
   readonly fixCustomerData = async (): Promise<void> => {
     this.customerData = await this.parseDate();
+    this.hook();
     this.customerData = this.fixCpf();
   };
 
   private fixCpf(): TCustomerData[] {
-    // in .map ({})
+    // in .map ({object})
     return this.customerData.map((customer) => ({
       ...customer,
       cpf: customer.cpf?.replace(/\D/g, ''), // anything but numbers
