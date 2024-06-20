@@ -1,0 +1,42 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Debug Client-side",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/src",
+      "sourceMapPathOverrides": {
+        "webpack:///./src/*": "${webRoot}/*"
+      },
+      "runtimeArgs": ["--remote-debugging-port=9222"],
+      "sourceMaps": true
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "restart": true,
+      "name": "Keep-conn",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "restart": true,
+      "name": "One-file",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/file.js"
+    },
+    {
+      "type": "node-terminal",
+      "request": "launch",
+      "name": "One-file-TS",
+      "skipFiles": ["<node_internals>/**"],
+      "command": "node -r sucrase/register ${workspaceFolder}/file.ts"
+    }
+  ]
+}
